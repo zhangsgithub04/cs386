@@ -1,0 +1,168 @@
+<html>
+   <head>
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>	
+
+<style>
+
+table.items{
+  margin-top:5px;
+  border:1px solid #6655a8;
+  background:#55a5d9;
+  width:20%;
+}
+table.items th{
+  border-bottom:1px solid #6655a8;
+}
+table.items td{
+  text-align:center;
+}
+input[type=button]{
+  border:1px solid #a588d9;
+  background:#b788d9;
+}
+</style>
+
+
+   </head>
+	
+   <body>
+      <h1>Hawks</h1>
+		
+      <table class = "src">
+         <tr><th>Name</th><th>State</th></tr>
+         <tr><td><div id = "name">Coby</div></td>
+         <td><div id = "state">CA</div></td></tr>
+      </table>
+
+
+      <div class = "central">
+         <button type = "button" onclick = "loadJSON()">Update Details and dynamically generate option controls</button>
+      </div>
+	<div id='checkboxlist'> </div>
+
+         <button id="trylist" type = "button"">parse json to a list</button>
+
+<div>
+<ol>
+</ol>
+</div>
+         <button id="xmlbrowse" type = "button"">Parse XML</button>
+<div id="xml"></div>
+
+<div id="result"> </div>
+
+Please input id: <input id="id" value="1"> </id>
+<button id="xmlsearch" type = "button">Search XML through an attribute value.</button>
+<div id="rating">rating</id>
+
+
+      <script>
+
+
+         function loadJSON(){
+
+            var data_file = "hawks.json";
+            var http_request = new XMLHttpRequest();
+			
+            http_request.onreadystatechange = function(){
+			
+               if (http_request.readyState == 4  ){
+                  // Javascript function JSON.parse to parse JSON data
+                  var jsonObj = JSON.parse(http_request.responseText);
+                  // jsonObj variable now contains the data structure and can
+                  // be accessed as jsonObj.name and jsonObj.country.
+			var p=jsonObj.players;
+                  document.getElementById("name").innerHTML = p[0].name;
+                  document.getElementById("state").innerHTML = p[0].state;
+
+		var table = $('<table></table>');
+            var counter = 0;
+
+            $(p).each(function () {
+                table.append($('<tr></tr>').append($('<td></td>').append($('<input>').attr({
+                    type: 'checkbox', name: 'name', value: 'this.value', id: 'chklistitem' + counter
+                })).append(
+                $('<label>').attr({
+                    for: 'chklistitem' + counter++
+                }).text(this.name))));
+            });
+
+            $('#checkboxlist').append(table);
+               }
+            }
+			
+            http_request.open("GET", data_file, true);
+            http_request.send();
+         }
+
+$("#trylist").click(function(){
+        $.getJSON("hawks.json", function(result){
+        var ps=result.players;
+        var items="";
+
+        for(var i=0, len=ps.length;i<len;i++)
+        {
+         items+=" <li><a class='ss' rel='"+ps[i].name+"'>"+ps[i].state+ps[i].name+"</a></li>";
+        }
+        
+	$('ol').html(items);
+        });
+});
+
+// Load the xml file using ajax 
+
+$("#xmlbrowse").click(function(){
+$.ajax({
+    type: "GET",
+    url: "hawks.xml",
+    dataType: "xml",
+    success: function (xml) {
+	//alert("I am in XML 2");
+	var result = "";
+        if ($(xml).find("player").length > 0) {
+
+            result = "<table class='items'>";
+            result += "<tr><th>PK</th><th>Name</th></tr>";
+
+            $(xml).find("player").each(function() {
+                result += "<tr>";
+                result += "<td>" + $(this).find("name").text() + "</td>";
+                result += "<td>" + $(this).find("state").text() + "</td>";
+                result += "</tr>";
+            });
+
+            result += "</table>";
+            $("#result").html(result);
+        }
+    }
+});
+});
+
+//search
+$("#xmlsearch").click(function(){
+$.ajax({
+    type: "GET",
+    url: "hawks.xml",
+    dataType: "xml",
+    success: function (xml) {
+	$id=$('#id').val();
+	alert($id);
+	$whattofind="player[id="+$id+"]";
+        $r=$(xml).find($whattofind);
+	if($r.length==1)
+	{
+		//alert($r.attr("rating"));
+                $("#rating").append($r.attr("rating"));
+        }else
+	{
+		alert("doesn't exist!");
+	}
+        }
+    });
+});
+		
+      </script>
+   </body>
+		
+</html>

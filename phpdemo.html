@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="loginstyle.css">
+</head>
+<body>
+
+<form action="phpsqldemo.php" method="post">
+ 
+  <Header>111 and 8888 are id and password for login to Computer Science Topics </Header>
+
+  <input type = 'hidden' name='submitted' id='submitted' value='1'/>
+ 
+  <label for ='username' >Username <span>*</span></label>
+
+  <input type='text' name='username' id = 'username' maxlength="25"/>
+
+  <div class="help">At least 6 character</div>
+ 
+  <label for='password'>Password <span>*</span></label>
+
+  <input type='password' name ='password' id = 'password' maxlength="25"/ >
+ 
+  <div class="help">Use upper and lowercase lettes as well</div>
+
+ <button type = "submit" class="searchsubmitformbutton"
+name = 'Submit' value = 'Submit'> Login </button>
+
+
+</form>
+</body>
+</html>

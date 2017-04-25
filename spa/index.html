@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Faculty</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<header class="compact">
+		<h2 class="tzine"><a href="http://www.hartwick.edu/">Hartwick</a></h2>
+		<h1><a href="#">Faculty Members</a></h1>
+	</header>
+
+	<div class="main-content">
+
+		<div class="all-products page">
+
+			<div class="filters">
+				<form>
+
+					<div class="filter-criteria">
+						<span>Department</span>
+						<label><input type="checkbox" name="department" value="computer">Computer Science</label>
+						<label><input type="checkbox" name="department" value="biology">Biology</label>
+					</div>
+
+					<div class="filter-criteria">
+						<span>Gender</span>
+						<label><input type="checkbox" value="male" name="gender">Male</label>
+						<label><input type="checkbox" value="female" name="gender">Female</label>
+					</div>
+
+
+					<div class="filter-criteria">
+						<span>Interests</span>
+						<label><input type="checkbox" value="art" name="interest">Art</label>
+						<label><input type="checkbox" value="music" name="interest">Music</label>
+					</div>
+					<button>Clear filters</button>
+
+				</form>
+
+			</div>
+
+			<ul class="products-list">
+				<script id="products-template" type="x-handlebars-template">​
+					{{#each this}}
+						<li data-index="{{id}}">
+							<a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
+							<h2><a href="#"> {{name}} </a></h2>
+							<ul class="product-description">
+								<li><span>Department: </span>{{specs.department}}</li>
+								<li><span>Gender: </span>{{specs.gender}}</li>
+								<li><span>Interest: </span>{{specs.interest}}</li>
+							</ul>
+							<button>View</button>
+							<p class="join">{{join}}</p>
+							<div class="highlight"></div>
+						</li>
+					{{/each}}
+				</script> 
+			</ul>
+
+		</div>
+
+
+		<div class="single-product page">
+
+			<div class="overlay"></div>
+
+			<div class="preview-large">
+				<h3>Single member view</h3>
+				<img src=""/>
+				<p></p>
+
+				<span class="close">×</span>
+			</div>
+
+		</div>
+
+		<div class="error page">
+			<h3>Sorry, something went wrong :(</h3>
+		</div>
+
+	</div>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>

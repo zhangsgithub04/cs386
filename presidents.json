@@ -1,0 +1,24 @@
+{
+"presidents": [
+    { 
+        "name":"Obama" , 
+        "imagename":"obama.jpg" }, 
+
+    { 
+        "name":"Trump" , 
+        "imagename":"trump.jpg" }, 
+    { 
+        "name":"Clinton" , 
+        "imagename":"clinton.jpg" }, 
+    { 
+        "name":"Bush" , 
+        "imagename":"bush.jpg" }, 
+    { 
+        "name":"Lincoln" , 
+        "imagename":"lincoln.jpg" }, 
+
+    { 
+        "name":"Jefferson" , 
+        "imagename":"jefferson.jpg" } 
+    ]
+}

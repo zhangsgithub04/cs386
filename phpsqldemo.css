@@ -1,0 +1,42 @@
+#logo
+{     float:right;
+	width:700;
+	height:700;
+}
+#files
+{
+	clear:left;
+}
+
+body
+{
+background-color:black;
+margin: 0 auto;
+}
+
+div
+{
+	color: red;
+	font: 32;
+}
+
+a:link, a:visited {
+	display: inline-block;      
+  	height:25px;
+  	width:250px;
+
+    background-color: green;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid
+}
+
+
+a:hover, a:active {
+    background-color: red;
+}
+
+

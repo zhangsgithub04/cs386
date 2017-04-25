@@ -1,0 +1,41 @@
+show databases;
+use yourdbname;
+show tables;
+
+create table  topics (id int primary key, name varchar(30));
+drop table topics;
+create table  topics (id int primary key, name varchar(30));
+alter table .... 
+
+desc topics;
+
+select * from topics;
+
+insert into topics values (1, 'sql');
+insert into topics values (2, 'html');
+
+select name from topics;
+
+select  name, id from topics;
+
+select * from topics where id=2;
+
+select * from topics where name='css';
+
+select * from topics where name like '%s%;
+
+select * from topics where name like '_s%';
+
+delete from topics where id=1;
+
+update topics set name='HTML5' where id=2;
+
+create table account (id varchar(30), password char(64), salt char(64));
+
+create table users (id varchar(10) primary key, password varchar(10));
+drop table user;
+
+select * from users;
+insert into users values ('111', '8888');
+select count(*) from users where id='111' and password='8888';
+

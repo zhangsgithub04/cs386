@@ -1,0 +1,1 @@
+create table  topics (id int primary key, name varchar(30));

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<players>
+<player id="1" rating="5">  
+<name> coby</name>
+<state>ca</state>
+</player>
+
+<player id="2" rating="4"> 
+<name> coby2</name>
+<state>nj</state>
+</player>
+
+</players>

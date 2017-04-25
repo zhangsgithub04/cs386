@@ -1,0 +1,130 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style>
+input:hover{
+background-color:red;
+}
+
+body{
+background-color:lightblue;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #00ff00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #0000ff;
+}
+
+fieldset
+{
+border: 1px solid #781351;
+width: 20em
+}
+
+legend
+{
+color: #fff;
+background: #ffa20c;
+border: 1px solid #781351;
+padding: 2px 6px
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="response"> </div>
+
+<form name='myForm' id='testform'>
+<fieldset>
+<legend>ajax php plain javascript</legend>
+id: <input type='text' name='htmlid' id='idhtmlid' /> <br />
+name: <input type='text' name='htmlname' id='idhtmlname' /> <br />
+<input type='button' onclick='ajaxdemo()' value='ajax php plain javascript' />
+</fieldset>
+</form>
+
+<div id="response2"> </div>
+
+<form name='myForm2' id='testform2'>
+<fieldset>
+<legend>ajax php jquery</legend>
+id: <input type='text' name='htmlid' id='idhtmlid2' /> <br />
+name: <input type='text' name='htmlname' id='idhtmlname2' /> <br />
+<input type='button' onclick='ajaxjquerydemo()' value='ajax php jquery' />
+</fieldset>
+</form>
+
+
+<script>
+<!-- 
+//Browser Support Code
+
+
+function ajaxdemo(){
+	//this shows plain ajax used with plain javascript.
+	var ajaxRequest;  // The variable that makes Ajax possible!
+	ajaxRequest = new XMLHttpRequest();
+	// Create a function that will receive data sent from the server
+	
+	ajaxRequest.onreadystatechange = function(){
+		if(ajaxRequest.readyState == 4){
+			document.getElementById('response').innerHTML= 
+				ajaxRequest.responseText;
+			document.getElementById('idhtmlname').value= 
+				ajaxRequest.responseText;
+			
+			//document.myForm.htmlname.value = 
+			//	ajaxRequest.responseText;
+		}
+	}
+	var id = document.getElementById('idhtmlid').value;
+	var queryString = "?id=" + id;
+	ajaxRequest.open("GET", "gettopicbyid.php" + queryString, true);
+	ajaxRequest.send(null); 
+}
+
+function ajaxjquerydemo()
+{
+	//this shows ajax used with jquery javascript library.
+	alert("I am showing jquery ajax");
+	var id = $('#idhtmlid2').val();
+	var qs = "?id=" + id;
+
+    	//$.ajax({url: "gettopicbyid.php"+qs, success: function(result){
+    	jQuery.ajax({url: "gettopicbyid.php"+qs, success: function(result){
+        //$("#response2").text(result); // either way.
+        $("#response2").html(result);
+        //jQuery("#response2").html(result);
+	$("#idhtmlname2").val(result);
+    }});
+}
+//-->
+</script>
+
+</body>
+</html>

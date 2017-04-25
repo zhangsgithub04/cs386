@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Howard Lichman",
+    "join": 2004,
+    "specs": {
+	"department":"Computer Science",
+	"gender":"Male",
+	"interest":"art"
+    },
+    "description": "Networking, Security",
+    "rating": 5,
+    "image": {
+      "small": "assets/images/lichman.jpg",
+      "large": "assets/images/lichman-large.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Howard Lichman",
+    "join": 2005,
+    "specs": {
+	"department":"Computer Science",
+	"gender":"Male",
+	"interest":"art"
+    },
+    "description": "Networking, Security",
+    "rating": 5,
+    "image": {
+      "small": "assets/images/lichman.jpg",
+      "large": "assets/images/lichman-large.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Howard Lichman",
+    "join": 50,
+    "specs": {
+	"department":"Computer Science",
+	"gender":"Male",
+	"interest":"art"
+    },
+    "description": "Networking, Security",
+    "rating": 5,
+    "image": {
+      "small": "assets/images/lichman.jpg",
+      "large": "assets/images/lichman-large.jpg"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Howard Lichman",
+    "join": 50,
+    "specs": {
+	"department":"Computer Science",
+	"gender":"Male",
+	"interest":"art"
+    },
+    "description": "Networking, Security",
+    "rating": 5,
+    "image": {
+      "small": "assets/images/lichman.jpg",
+      "large": "assets/images/lichman-large.jpg"
+    }
+  }
+
+]

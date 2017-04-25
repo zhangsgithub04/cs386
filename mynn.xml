@@ -1,0 +1,12 @@
+<nn>
+
+	<numoflayers> 2 </numoflayers>
+
+	<layer id="input"> 2 
+             <node> 1 </node>
+             <node> 1 </node>    
+        </layer> 
+        <layer id="output"> 1
+		<node>1 1 </node> 
+	</layer>
+</nn>

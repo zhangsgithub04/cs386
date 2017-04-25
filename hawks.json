@@ -1,0 +1,20 @@
+{
+"players":
+[
+{
+	"name":"player1",
+	"state": "ca",
+	"honor":["mvp", "best player"] 
+},
+{
+	"name":"player2",
+	"state": "ca",
+	"honor":["mvp", "best player"] 
+},
+{
+	"name":"player3",
+	"state": "ca",
+	"honor":["mvp", "best player"] 
+}
+]
+}
